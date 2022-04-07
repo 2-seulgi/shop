@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.background{
+  height: 330px;
+  background-image:url('./girl-g1f4da7995_1280.jpg');
+  background-position: center;
+  background-size: cover;
+  filter: brightness(90%);
+  margin-bottom: 24px;
+}
+
+.background-content{
+  padding-top: 60px;
+  color: #fff;
+}
