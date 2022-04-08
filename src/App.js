@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 import React, { useState } from 'react';
 import './App.css';
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import Data from './data.js';
 
 function App() {
-  let [data, data변경] = useState(Data);
+  let [clothes, clothes변경] = useState(Data);
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
@@ -35,18 +37,11 @@ function App() {
           </Button>{' '}
         </div>
       </div>
-     <div className="container">
+      <div className="container">
         <div className="row">
-          <div className="col-md-4">
-            <img src="https://cdn.pixabay.com/photo/2017/08/01/11/48/woman-2564660_960_720.jpg" width="100%" alt="" />
-          </div>
-          <div className="col-md-4">
-            <img
-              src="https://cdn.pixabay.com/photo/2020/04/22/06/47/hydrangea-5076212_960_720.jpg"
-              width="100%"
-              alt=""
-            />
-          </div>
+          {clothes.map((a, i) => {
+            return <Card clothes={clothes[i]} i={i} key={i} />;
+          })}         
         </div>
       </div>
     </div>
@@ -54,10 +49,14 @@ function App() {
 }
 function Card(props) {
   return (
-    <div className="col-md-4">
-      <img src="https://cdn.pixabay.com/photo/2021/07/26/14/31/woman-6494471_960_720.jpg" width="100%" alt="" />
-      <h4>{props.data[0].title}</h4>
-      <p>{props.data[0].content}</p>
+    <div>
+      <div className="col-md-4">
+        <img src={'/img/clothes' + (props.i + 1) + '.jpg'} width="100%" alt="" />
+        <h4>{props.clothes.title}</h4>
+        <p>
+          {props.clothes.content} & {props.clothes.price}
+        </p>
+      </div>
     </div>
   );
 }
