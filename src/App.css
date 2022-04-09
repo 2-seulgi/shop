@@ -50,3 +50,7 @@
   padding-top: 60px;
   color: #fff;
 }
+a {
+  text-decoration: none;
+  color: #282c34;
+}
