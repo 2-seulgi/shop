@@ -35,12 +35,11 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
       <Route exact path="/">
         <Main />
       </Route>
-      <Route path="/detail">
-        <Detail />
+      <Route path="/detail/:id">
+        <Detail clothes={clothes} />
       </Route>
     </div>
   );
