@@ -1,0 +1,25 @@
+// @import './_reset.scss';
+$메인색상: #939597;
+$서브색상: #f5df4d;
+
+.red {
+  color: $메인색상;
+}
+.my-alert{
+    background-color: $서브색상;
+    color: $메인색상;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+.my-alert p{
+    padding: auto;
+    margin: auto;
+}
+div.container{
+    p{
+        color: $메인색상;
+    }
+}
