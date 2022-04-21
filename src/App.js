@@ -7,9 +7,12 @@ import Data from './data.js';
 import Detail from './Component/Detail';
 import Main from './Component/Main';
 import { Link, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 function App() {
   let [clothes, clothes변경] = useState(Data);
+  let [재고, 재고변경] = useState([10, 21, 8]);
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
@@ -21,7 +24,8 @@ function App() {
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/detail">Detail
+              <Nav.Link as={Link} to="/detail">
+                Detail
               </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -38,7 +42,7 @@ function App() {
         <Main />
       </Route>
       <Route path="/detail/:id">
-        <Detail clothes={clothes} />
+        <Detail clothes={clothes} 재고={재고} 재고변경={[]} />
       </Route>
     </div>
   );

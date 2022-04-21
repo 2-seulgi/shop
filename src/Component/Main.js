@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import Data from '../data';
+import axios from 'axios';
 
 function Main() {
   let [clothes, clothes변경] = useState(Data);
@@ -22,6 +23,24 @@ function Main() {
             return <Card clothes={clothes[i]} i={i} key={i} />;
           })}
         </div>
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            // post 하는법
+            axios.post('서버URL', { searchText: '검색어' });
+            axios
+              .get('https://codingapple1.github.io/shop/data2.json')
+              .then((res) => {
+                console.log(res.data);
+                clothes변경([...clothes, ...res.data]);
+              })
+              .catch(() => {
+                console.log('실패');
+              });
+          }}
+        >
+          더보기
+        </button>
       </div>
     </div>
   );

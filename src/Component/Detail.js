@@ -41,10 +41,23 @@ function Detail(props) {
           <h4>{찾은상품.title}</h4>
           <p>{찾은상품.content}</p>
           <p>{찾은상품.price}원</p>
-          <button className="btn btn-danger mb-3">주문하기</button>
+          <Info 재고={props.재고} />
+
+          <button
+            className="btn btn-danger mb-3"
+            onClick={() => {
+              props.재고변경([9, 20, 7]);
+            }}
+          >
+            주문하기
+          </button>
         </div>
       </div>
     </div>
   );
+
+  function Info(props) {
+    return <p>재고:{props.재고[id]}</p>;
+  }
 }
 export default Detail;
