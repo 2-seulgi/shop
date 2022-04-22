@@ -11,6 +11,7 @@ let 제목 = styled.h4`
 `;
 
 function Detail(props) {
+  
   let [알람, 알람창변경] = useState(true);
   useEffect(() => {
     let 타이머 = setTimeout(() => {
